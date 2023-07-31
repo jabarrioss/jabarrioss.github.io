@@ -6,12 +6,73 @@
 -->
 <html lang="es">
 	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-3DFY36722P"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-3DFY36722P');
+		</script>
 		<title>Portafolio de Jhonny B. Sandrea</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			#more {
+				display: none;
+			}
+			/* Tooltip container */
+			.tooltip {
+				position: relative;
+				display: inline-block;
+				border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+			}
+			
+			/* Tooltip text */
+			.tooltip .tooltiptext {
+				visibility: hidden;
+				width: 120px;
+				background-color: #555;
+				color: #fff;
+				text-align: center;
+				padding: 5px 0;
+				border-radius: 6px;
+			
+				/* Position the tooltip text */
+				position: absolute;
+				z-index: 1;
+				bottom: 125%;
+				left: 50%;
+				margin-left: -60px;
+			
+				/* Fade in tooltip */
+				opacity: 0;
+				transition: opacity 0.3s;
+			}
+			
+			/* Tooltip arrow */
+			.tooltip .tooltiptext::after {
+				content: "";
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				margin-left: -5px;
+				border-width: 5px;
+				border-style: solid;
+				border-color: #555 transparent transparent transparent;
+			}
+			
+			/* Show the tooltip text when you mouse over the tooltip container */
+			.tooltip:hover .tooltiptext {
+				visibility: visible;
+				opacity: 1;
+			}
+		</style>
 	</head>
+
 	<body class="is-preload-0 is-preload-1 is-preload-2">
 
 		<!-- Main -->
@@ -20,8 +81,21 @@
 				<!-- Header -->
 					<header id="header">
 						<h2>Jhonny B. Sandrea</h2>
-						<p>Hola, mi nombre es Jhonny soy un programador autodidacta, soy muy apasionado por la tecnología y quiero mostrarles algunos de mis proyectos</p>
+							<p>Soy un desarrollador web con experiencia en bases de datos relacionales y no relacionales, así como en <strong>PHP, Yii2, Laravel, Symfony y NestJS.</strong> También tengo experiencia con colas de mensajes y conocimientos básicos de servicios de <strong>AWS y Linux.</strong><span id="dots">...</span></p>
+							<span id="more">
+								<p>Soy un desarrollador rápido y eficiente, y siempre estoy dispuesto a aprender cosas nuevas. Estoy motivado y tengo un fuerte sentido de responsabilidad. Soy un jugador de equipo y siempre estoy dispuesto a ayudar a mis compañeros.</p>
+								<p>Estoy buscando un trabajo en el que pueda utilizar mis habilidades y experiencia para hacer una contribución significativa a una empresa en crecimiento.</p>
+							</span>
+							<button onclick="ReadMore()" id="readMore">Ver Mas...</button>
 						<ul class="icons">
+							<li class="tooltip">
+								<a href="assets/pdf/Jhonny_Barrios_English.pdf" class="icon fa-id-card"><span class="label">CV English</span></a>
+								<span class="tooltiptext">Jhonny Barrios CV in English</span>
+							</li>
+							<li class="tooltip">
+								<a href="assets/pdf/Jhonny_Barrios_Spanish.pdf" class="icon fa-id-card"><span class="label">CV Spanish</span></a>
+								<span class="tooltiptext">Jhonny Barrios CV in Spanish</span>
+							</li>
 							<li><a href="https://www.youtube.com/channel/UC2n6cP_wzeNY5VcteFJUaXw" class="icon brands fa-youtube"><span class="label">Github</span></a></li>
 							<li><a href="https://github.com/jabarrioss/" class="icon brands fa-github"><span class="label">Github</span></a></li>
 							<!-- <li><a href="https://twitter.com/MalosPanes" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
@@ -55,6 +129,13 @@
 							</h2>
 							<p>Este proyecto se utiliza la API de shopify para que cada vez que un cliente realice una nueva orden en la tienda esa sea enviada automaticamente a la API del proveedor, tambien se le hace seguimiento a la orden</p>
 						</article>
+						<article>
+							<a class="thumbnail" href="images/fulls/06.png" data-position="top center"><img src="images/thumbs/06.png" alt="" /></a>
+							<h2>Procesador de ordenes</h2>
+							<h2>
+							</h2>
+							<p>Este proyecto se utiliza la API de shopify para que cada vez que un cliente realice una nueva orden en la tienda esa sea enviada automaticamente a la API del proveedor, tambien se le hace seguimiento a la orden</p>
+						</article>
 												
 						<article>
 							<a class="thumbnail" href="images/fulls/01.png" data-position="left center"><img src="images/thumbs/01.png" alt="" /></a>
@@ -72,13 +153,6 @@
 								Se debe validar que el nombre ingresado tengo minimo 2 palabras
 							</li>
 							</ul>
-						</article>
-
-						<article>
-							<a class="thumbnail" href="images/fulls/02.png"><img src="images/thumbs/02.png" alt="" /></a>
-							<h2>Plugin para shopify</h2>
-							<p>Este plugin lo que hace es agregar un boton que diga en este caso "BUY NOW"
-							a la pagina del producto del cliente, para poder agilizar el proceso de compra</p>
 						</article>
 					</section>
 
@@ -104,8 +178,25 @@
 			<script src="assets/src/jquery.i18n.parser.js"></script>
 			<script src="assets/src/jquery.i18n.emitter.js"></script>
 			<script src="assets/src/jquery.i18n.language.js"></script>
-			<script src="assets/src/languages/he.js"></script>
+			<!-- <script src="assets/src/languages/he.js"></script>
 			<script src="assets/src/languages/fi.js"></script>
-			<script src="assets/src/languages/ml.js"></script>
+			<script src="assets/src/languages/ml.js"></script> -->
+			<script>
+				function ReadMore() {
+					var dots = document.getElementById("dots");
+					var moreText = document.getElementById("more");
+					var btnText = document.getElementById("readMore");
+				  
+					if (dots.style.display === "none") {
+					  dots.style.display = "inline";
+					  btnText.innerHTML = "Ver Mas...";
+					  moreText.style.display = "none";
+					} else {
+					  dots.style.display = "none";
+					  btnText.innerHTML = "Ver Menos...";
+					  moreText.style.display = "inline";
+					}
+				  }
+			</script>
 	</body>
 </html>
