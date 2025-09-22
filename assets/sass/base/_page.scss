@@ -39,6 +39,9 @@
 		}
 
 	html, body {
-		background-color: _palette(page-bg);
+		background: _palette(page-bg);
+		background-image: 
+			radial-gradient(circle at 25% 25%, transparentize(_palette(accent), 0.95) 0%, transparent 30%),
+			radial-gradient(circle at 75% 75%, transparentize(_palette(gradient-end), 0.95) 0%, transparent 30%);
 		overflow: hidden;
 	}
