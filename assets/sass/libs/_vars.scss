@@ -17,29 +17,42 @@
 
 // Size.
 	$size: (
-		border-radius:		4px,
+		border-radius:		8px,
+		border-radius-large: 12px,
 		border-width:		1px,
 		element-height:		2.75em,
-		element-margin:		1.25em,
+		element-margin:		1.5em,
 		main:				22.5em,
-		main-alt:			19em
+		main-alt:			19em,
+		box-shadow:			0 4px 6px -1px rgba(0, 0, 0, 0.1),
+		box-shadow-large:	0 10px 15px -3px rgba(0, 0, 0, 0.1)
 	);
 
 // Font.
 	$font: (
-		family:				('Roboto', Helvetica, sans-serif),
-		family-fixed:		('Courier New', monospace),
+		family:				('Inter', 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif),
+		family-fixed:		('JetBrains Mono', 'Fira Code', 'Courier New', monospace),
 		weight:				400,
-		weight-bold:		700
+		weight-medium:		500,
+		weight-bold:		600,
+		weight-heavy:		700
 	);
 
 // Palette.
 	$palette: (
-		page-bg:			#101010,
-		bg:					#fff,
-		fg:					#aaa,
-		fg-bold:			#555,
-		fg-light:			#ccc,
-		border:				#ccc,
-		accent:				#00D3B7
+		page-bg:			#0f0f23,
+		bg:					#ffffff,
+		bg-card:			#f8fafc,
+		fg:					#64748b,
+		fg-bold:			#1e293b,
+		fg-light:			#94a3b8,
+		border:				#e2e8f0,
+		accent:				#6366f1,
+		accent-light:		#a5b4fc,
+		gradient-start:		#6366f1,
+		gradient-end:		#8b5cf6,
+		success:			#10b981,
+		warning:			#f59e0b,
+		error:				#ef4444,
+		shadow:				rgba(0, 0, 0, 0.1)
 	);

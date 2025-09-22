@@ -7,10 +7,43 @@
 /* Header */
 
 	#header {
-		@include padding(3em, 2.25em);
+		@include padding(4em, 2.5em);
+		background: linear-gradient(135deg, _palette(page-bg) 0%, darken(_palette(page-bg), 5%) 100%);
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: radial-gradient(circle at 20% 50%, transparentize(_palette(accent), 0.9) 0%, transparent 50%),
+						radial-gradient(circle at 80% 20%, transparentize(_palette(gradient-end), 0.9) 0%, transparent 50%);
+			pointer-events: none;
+		}
 
 		h1 {
-			font-size: 2.25em;
-			font-weight: _font(weight-bold);
+			font-size: 2.75em;
+			font-weight: _font(weight-heavy);
+			background: linear-gradient(135deg, _palette(accent), _palette(gradient-end));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			margin-bottom: 0.5em;
+		}
+
+		h2 {
+			background: linear-gradient(135deg, _palette(accent), _palette(gradient-end));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			margin-bottom: 1em;
+		}
+
+		p {
+			color: _palette(fg);
+			line-height: 1.8;
+			margin-bottom: 2em;
 		}
 	}

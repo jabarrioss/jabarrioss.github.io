@@ -13,13 +13,14 @@
 		top: 0;
 		width: _size(main);
 		height: 100%;
-		background: _palette(bg);
+		background: linear-gradient(to bottom, _palette(bg), _palette(bg-card));
 		outline: 0;
 		overflow-x: hidden;
 		overflow-y: auto;
 		text-align: _misc(main-align);
 		visibility: visible;
 		z-index: _misc(z-index-base);
+		box-shadow: -2px 0 20px rgba(0, 0, 0, 0.1);
 
 		@if _misc(main-side) == 'left' {
 			left: 0;

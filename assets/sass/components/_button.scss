@@ -13,33 +13,50 @@
 	.button {
 		@include vendor('appearance', 'none');
 		@include vendor('transition', (
-			'background-color #{_duration(transition)} ease-in-out',
-			'border-color #{_duration(transition)} ease-in-out',
-			'color #{_duration(transition)} ease-in-out'
+			'all #{_duration(transition)} ease',
+			'transform 0.15s ease'
 		));
-		background-color: transparent;
+		background: linear-gradient(135deg, _palette(gradient-start), _palette(gradient-end));
 		border-radius: _size(border-radius);
-		border: solid 1px _palette(border);
-		color: _palette(fg-bold);
+		border: none;
+		box-shadow: _size(box-shadow);
+		color: white;
 		cursor: pointer;
 		display: inline-block;
+		font-weight: _font(weight-medium);
 		line-height: 1;
-		padding: 0.75em 1.5em;
+		padding: 0.875em 2em;
 		text-align: center;
 		text-decoration: none;
 		white-space: nowrap;
 
 		&:hover {
-			border-color: _palette(accent);
-			color: _palette(accent);
+			@include vendor('transform', 'translateY(-2px)');
+			box-shadow: _size(box-shadow-large);
+			background: linear-gradient(135deg, lighten(_palette(gradient-start), 5%), lighten(_palette(gradient-end), 5%));
 
 			&:active {
-				background-color: transparentize(_palette(accent), 0.85);
+				@include vendor('transform', 'translateY(0px)');
+				box-shadow: _size(box-shadow);
+			}
+		}
+
+		&.secondary {
+			background: transparent;
+			border: solid 2px _palette(accent);
+			color: _palette(accent);
+			box-shadow: none;
+
+			&:hover {
+				background: _palette(accent);
+				color: white;
+				@include vendor('transform', 'translateY(-2px)');
+				box-shadow: _size(box-shadow);
 			}
 		}
 
 		&.icon {
-			padding-left: 1.35em;
+			padding-left: 1.5em;
 
 			&:before {
 				margin-right: 0.5em;
@@ -51,16 +68,19 @@
 		}
 
 		&.small {
-			font-size: 0.8em;
+			font-size: 0.875em;
+			padding: 0.75em 1.5em;
 		}
 
 		&.large {
-			font-size: 1.35em;
+			font-size: 1.125em;
+			padding: 1em 2.5em;
 		}
 
 		&.disabled,
 		&:disabled {
 			@include vendor('pointer-events', 'none');
-			opacity: 0.25;
+			opacity: 0.5;
+			@include vendor('transform', 'none');
 		}
 	}

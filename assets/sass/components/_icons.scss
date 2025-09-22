@@ -13,15 +13,33 @@
 
 		li {
 			display: inline-block;
-			padding: 0 1em 0 0;
+			padding: 0 0.75em 0 0;
 
 			&:last-child {
 				padding-right: 0;
 			}
 
 			.icon {
+				@include vendor('transition', 'all #{_duration(transition)} ease');
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: 3em;
+				height: 3em;
+				background: linear-gradient(135deg, _palette(accent), _palette(gradient-end));
+				border-radius: 50%;
+				color: white;
+				text-decoration: none;
+				box-shadow: _size(box-shadow);
+
+				&:hover {
+					@include vendor('transform', 'translateY(-3px)');
+					box-shadow: _size(box-shadow-large);
+					background: linear-gradient(135deg, lighten(_palette(accent), 10%), lighten(_palette(gradient-end), 10%));
+				}
+
 				&:before {
-					font-size: 1.5rem;
+					font-size: 1.25rem;
 				}
 			}
 		}
