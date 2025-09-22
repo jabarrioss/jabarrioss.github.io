@@ -953,6 +953,13 @@ body.is-preload-1 #main {
   line-height: 1.8;
   margin-bottom: 2em;
 }
+#header p strong {
+  color: #a5b4fc;
+  text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+#header .button {
+  margin-bottom: 2em;
+}
 
 /* Footer */
 #footer {
