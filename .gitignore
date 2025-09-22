@@ -1,0 +1,10 @@
+# Screenshots for documentation purposes
+*.png
+!images/**/*.png
+
+# Node modules if any
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
