@@ -45,5 +45,14 @@
 			color: _palette(fg);
 			line-height: 1.8;
 			margin-bottom: 2em;
+
+			strong {
+				color: _palette(accent-light);
+				text-shadow: 0 0 10px transparentize(_palette(accent), 0.5);
+			}
+		}
+
+		.button {
+			margin-bottom: 2em;
 		}
 	}
