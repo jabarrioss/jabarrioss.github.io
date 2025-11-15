@@ -1,194 +1,305 @@
-<!DOCTYPE HTML>
-<!--
-	Lens by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html lang="es">
-	<head>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-3DFY36722P"></script>
-		<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhonny B Sandrea | Portafolio de Proyectos</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Aplicamos la fuente Inter a todo el cuerpo */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
 
-		gtag('config', 'G-3DFY36722P');
-		</script>
-		<title>Portafolio de Jhonny B. Sandrea</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			#more {
-				display: none;
-			}
-			/* Tooltip container */
-			.tooltip {
-				position: relative;
-				display: inline-block;
-				border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-			}
-			
-			/* Tooltip text */
-			.tooltip .tooltiptext {
-				visibility: hidden;
-				width: 120px;
-				background-color: #555;
-				color: #fff;
-				text-align: center;
-				padding: 5px 0;
-				border-radius: 6px;
-			
-				/* Position the tooltip text */
-				position: absolute;
-				z-index: 1;
-				bottom: 125%;
-				left: 50%;
-				margin-left: -60px;
-			
-				/* Fade in tooltip */
-				opacity: 0;
-				transition: opacity 0.3s;
-			}
-			
-			/* Tooltip arrow */
-			.tooltip .tooltiptext::after {
-				content: "";
-				position: absolute;
-				top: 100%;
-				left: 50%;
-				margin-left: -5px;
-				border-width: 5px;
-				border-style: solid;
-				border-color: #555 transparent transparent transparent;
-			}
-			
-			/* Show the tooltip text when you mouse over the tooltip container */
-			.tooltip:hover .tooltiptext {
-				visibility: visible;
-				opacity: 1;
-			}
-		</style>
-	</head>
+    <!-- ========== HEADER / NAVBAR ========== -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo / Nombre -->
+                <div class="flex-shrink-0">
+                    <a href="#inicio" class="text-2xl font-bold text-indigo-600 hover:text-indigo-800 transition duration-300">
+                        Tu Nombre
+                    </a>
+                </div>
+                
+                <!-- Navegación Desktop -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#inicio" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Inicio</a>
+                        <a href="#proyectos" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Proyectos</a>
+                        <a href="#sobre-mi" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Sobre Mí</a>
+                        <a href="#contacto" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contacto</a>
+                    </div>
+                </div>
+                
+                <!-- Botón Menú Móvil -->
+                <div class="-mr-2 flex md:hidden">
+                    <button id="menu-btn" type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Abrir menú principal</span>
+                        <!-- Icono Hamburguesa -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- Icono X (cerrar) -->
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
 
-	<body class="is-preload-0 is-preload-1 is-preload-2">
+        <!-- Menú Móvil (oculto por defecto) -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio" class="text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Inicio</a>
+                <a href="#proyectos" class="text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Proyectos</a>
+                <a href="#sobre-mi" class="text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Sobre Mí</a>
+                <a href="#contacto" class="text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Contacto</a>
+            </div>
+        </div>
+    </header>
 
-		<!-- Main -->
-			<div id="main">
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+        
+        <!-- ========== SECCIÓN HERO (INICIO) ========== -->
+        <section id="inicio" class="pt-20 pb-28 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <img class="w-40 h-40 rounded-full mx-auto mb-6 shadow-lg" 
+                     src="https://placehold.co/200x200/e0e7ff/4f46e5?text=Tu+Foto" 
+                     alt="Foto de perfil de Tu Nombre"
+                     onerror="this.onerror=null;this.src='https://placehold.co/200x200/e0e7ff/4f46e5?text=Tu+Foto';">
+                
+                <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl">
+                    Hola, soy Jhonny B Sandrea
+                </h1>
+                <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+                    Soy un Desarrollador Web Full-Stack apasionado por crear soluciones tecnológicas innovadoras y eficientes.
+                </p>
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <a href="#proyectos" class="inline-block px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
+                        Ver mis Proyectos
+                    </a>
+                    <a href="#contacto" class="inline-block px-8 py-3 bg-gray-200 text-gray-800 font-medium rounded-lg shadow-md hover:bg-gray-300 transition duration-300">
+                        Contáctame
+                    </a>
+                </div>
+            </div>
+        </section>
 
-				<!-- Header -->
-					<header id="header">
-						<h2>Jhonny B. Sandrea</h2>
-							<p>🚀 Desarrollador Full-Stack apasionado por crear soluciones web innovadoras y escalables. Especializado en <strong>PHP, Laravel, Symfony y NestJS</strong>, con experiencia en bases de datos relacionales y no relacionales. Dominio de arquitecturas modernas con <strong>AWS y Linux</strong>, microservicios y colas de mensajes.<span id="dots">...</span></p>
-							<span id="more">
-								<p>💡 Me caracterizo por mi capacidad de adaptación rápida a nuevas tecnologías y metodologías ágiles. Tengo un enfoque orientado a resultados y disfruto colaborando en equipos multidisciplinarios para entregar productos de calidad excepcional.</p>
-								<p>🎯 Busco oportunidades donde pueda aplicar mi experiencia técnica y pasión por el desarrollo para impulsar el crecimiento y la innovación en proyectos desafiantes que generen impacto real.</p>
-							</span>
-							<button onclick="ReadMore()" id="readMore" class="button secondary">Ver Mas...</button>
-						<ul class="icons">
-							<li><a href="https://www.youtube.com/channel/UC2n6cP_wzeNY5VcteFJUaXw" class="icon brands fa-youtube"><span class="label">Github</span></a></li>
-							<li><a href="https://github.com/jabarrioss/" class="icon brands fa-github"><span class="label">Github</span></a></li>
-							<!-- <li><a href="https://twitter.com/MalosPanes" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
-						</ul>
-					</header>
+        <!-- ========== SECCIÓN PROYECTOS ========== -->
+        <section id="proyectos" class="py-20 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+                        Mis Proyectos
+                    </h2>
+                    <p class="mt-3 text-lg text-gray-600">
+                        Una selección de mis trabajos más recientes.
+                    </p>
+                </div>
+                
+                <!-- Grid de Proyectos -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Proyecto 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-500">
+                        <img class="w-full h-48 object-cover" 
+                             src="https://jabarrioss.github.io/images/fulls/image1.png" 
+                             alt="Vista previa del Proyecto Uno"
+                             onerror="this.onerror=null;this.src='https://jabarrioss.github.io/images/fulls/image1.png';">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Trackeriify</h3>
+                            <p class="text-gray-600 mb-4">
+                                Shopify App para rastrear envíos de productos, proporcionando a los usuarios actualizaciones sobre el estado de sus pedidos.
+                            </p>
+                            <!-- Etiquetas/Tecnologías -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">PHP</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">VueJS</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">MySQL</span>
+                            </div>
+                            <!-- Enlaces -->
+                            <div class="flex space-x-4">
+                                <a href="https://apps.shopify.com/trackeriify" class="text-indigo-600 hover:text-indigo-800 font-medium transition duration-300" target="_blank" rel="noopener noreferrer">Ver Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-500">
+                        <img class="w-full h-48 object-cover" 
+                             src="https://jabarrioss.github.io/images/fulls/image2.png" 
+                             alt="Vista previa del Proyecto Dos"
+                             onerror="this.onerror=null;this.src='https://jabarrioss.github.io/images/fulls/image2.png';">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">FreeGamesBot</h3>
+                            <p class="text-gray-600 mb-4">
+                                Bot de Discord que permite a los recibir notificaciones automáticas sobre juegos gratuitos disponibles en diversas plataformas.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">NodeJS</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-800 text-xs font-medium rounded-full">Tailwind</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full">Discord API</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="https://fg.notipify.com/" class="text-indigo-600 hover:text-indigo-800 font-medium transition duration-300" target="_blank" rel="noopener noreferrer">Ver Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto 3 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-500">
+                        <img class="w-full h-48 object-cover" 
+                             src="https://jabarrioss.github.io/images/fulls/3.png" 
+                             alt="Vista previa del Proyecto Tres"
+                             onerror="this.onerror=null;this.src='https://jabarrioss.github.io/images/fulls/3.png';">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Sistema de inventarios</h3>
+                            <p class="text-gray-600 mb-4">
+                                Aplicación web para la gestión y control de inventarios en pequeñas y medianas empresas.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-full">HTML5</span>
+                                <span class="px-3 py-1 bg-pink-100 text-pink-800 text-xs font-medium rounded-full">CSS3</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">Laravel</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium transition duration-300" target="_blank" rel="noopener noreferrer">Ver Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- ========== SECCIÓN SOBRE MÍ ========== -->
+        <section id="sobre-mi" class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+                        Sobre Mí
+                    </h2>
+                </div>
+                <div class="text-lg text-gray-600 space-y-6 text-left md:text-justify">
+                    <p>
+                        ¡Hola! Soy Jhonny B Sandrea, un desarrollador de software con <span id="years"></span> años de experiencia. Me especializo en Desarrollo backend con Laravel, pero siempre estoy aprendiendo y explorando nuevas tecnologías.
+                    </p>
+                    <p>
+                        Mi objetivo es construir productos que no solo sean funcionales y escalables, sino que también ofrezcan una experiencia de usuario excepcional. Me encanta resolver problemas complejos y colaborar en equipo para llevar ideas desde la concepción hasta el despliegue.
+                    </p>
+                    <p>
+                        Cuando no estoy programando, disfruto viendo películas, aprendiendo nuevas habilidades y explorando el mundo de la tecnología.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-				<!-- Thumbnail -->
-					<section id="thumbnails">
-						<article>
-							<a class="thumbnail" href="images/fulls/03.png" data-position="top center"><img src="images/thumbs/03.png" alt="" /></a>
-							<h2>CRM</h2>
-							<h2>
-							<a target="_blank" href="#">Demo</a>
-							</h2>
-							<p>Este fue un proyecto para un cliente que pidio un CRM para poder recolectar datos de sus clientes y asi tomar mejores decisiones de negocio</p>
-						</article>
+        <!-- ========== SECCIÓN CONTACTO ========== -->
+        <section id="contacto" class="py-20 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+                    Sigueme!
+                </h2>
+                <!-- <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
+                    Estoy buscando activamente nuevas oportunidades. Si tienes un proyecto en mente o simplemente quieres conectar, ¡no dudes en contactarme!
+                </p> -->
+                
+                <div class="mt-8 flex justify-center items-center space-x-6">
+                    <!-- Email -->
+                    <!-- <a href="mailto:tu.email@ejemplo.com" class="text-gray-500 hover:text-indigo-600 transition duration-300">
+                        <span class="sr-only">Email</span>
+                        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </a> -->
+                    
+                    <!-- LinkedIn -->
+                    <!-- <a href="https://linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-indigo-600 transition duration-300">
+                        <span class="sr-only">LinkedIn</span>
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/>
+                        </svg>
+                    </a> -->
+                    
+                    <!-- GitHub -->
+                    <a href="https://github.com/jabarrioss" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-indigo-600 transition duration-300">
+                        <span class="sr-only">GitHub</span>
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .267.18.577.688.48C19.135 20.165 22 16.418 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                    <!-- Twitch -->
+                    <a href="https://twitch.tv/mroldjon" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-indigo-600 transition duration-300">
+                        <span class="sr-only">Twitch</span>
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M2.25 0C1.007 0 0 1.007 0 2.25v15.75c0 1.243 1.007 2.25 2.25 2.25h4.5v4.5l4.5-4.5h6.75c1.243 0 2.25-1.007 2.25-2.25V2.25C22.5 1.007 21.493 0 20.25 0H2.25zm16.5 15.75h-7.5l-4.5 4.5v-4.5H3V3h15.75v12.75zM9.75 6.75h-3v6h3v-6zm7.5 0h-3v6h3v-6z"/>
+                        </svg>
+                    </a>
+                    <!-- Youtube -->
+                    <a href="https://youtube.com/@mroldjon" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-indigo-600 transition duration-300">
+                        <span class="sr-only">YouTube</span>
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M23.498 6.186a2.997 2.997 0 00-2.11-2.12C19.796 3.5 12 3.5 12 3.5s-7.796 0-9.388.566a2.997 2.997 0 00-2.11 2.12A31.24 31.24 0 000 12a31.24 31.24 0 00.502 5.814 2.997 2.997 0 002.11 2.12C4.204 20.5 12 20.5 12 20.5s7.796 0 9.388-.566a2.997 2.997 0 002.11-2.12A31.24 31.24 0 0024 12a31.24 31.24 0 00-.502-5.814zM9.75 15.02V8.98l6.5 3.02-6.5 3.02z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+            <p class="text-sm text-gray-500">
+                &copy; <span id="current-year"></span> Jhonny B Sandrea. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
 
-						<article>
-							<a class="thumbnail" href="images/fulls/04.png" data-position="top center"><img src="images/thumbs/04.png" alt="" /></a>
-							<h2>CRM</h2>
-							<h2>
-							<a target="_blank" href="https://apps.shopify.com/trackinghero">Tracking Hero</a>
-							</h2>
-							<p>Esta App utiliza la API de shopify para los pedidos realizados por los clientes independientemente del lugar el mundo donde se hayan realizado</p>
-						</article>
-												
-						<article>
-							<a class="thumbnail" href="images/fulls/05.png" data-position="top center"><img src="images/thumbs/05.png" alt="" /></a>
-							<h2>Procesador de ordenes</h2>
-							<h2>
-							</h2>
-							<p>Este proyecto se utiliza la API de shopify para que cada vez que un cliente realice una nueva orden en la tienda esa sea enviada automaticamente a la API del proveedor, tambien se le hace seguimiento a la orden</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/06.png" data-position="top center"><img src="images/thumbs/06.png" alt="" /></a>
-							<h2>Procesador de ordenes</h2>
-							<h2>
-							</h2>
-							<p>Este proyecto se utiliza la API de shopify para que cada vez que un cliente realice una nueva orden en la tienda esa sea enviada automaticamente a la API del proveedor, tambien se le hace seguimiento a la orden</p>
-						</article>
-												
-						<article>
-							<a class="thumbnail" href="images/fulls/01.png" data-position="left center"><img src="images/thumbs/01.png" alt="" /></a>
-							<h2>Plugin para shopify</h2>
-							<h2>
-							<a target="_blank" href="https://uzumymw1.myshopify.com/collections/frontpage/products/guitar">Demo</a>
-							</h2>
-							<ul><li>
-							Requerimientos:
-							</li>
-							<li>
-								Se debe validar que el comprador tenga como minimo 18 años
-							</li>
-							<li>
-								Se debe validar que el nombre ingresado tengo minimo 2 palabras
-							</li>
-							</ul>
-						</article>
-					</section>
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // --- Script para el menú móvil ---
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcons = menuBtn.querySelectorAll('svg');
 
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="copyright">
-							<li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
-						</ul>
-					</footer>
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcons.forEach(icon => icon.classList.toggle('hidden'));
+        });
 
-			</div>
+        // --- Script para cerrar menú móvil al hacer clic en un enlace ---
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcons.forEach(icon => icon.classList.toggle('hidden'));
+            });
+        });
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/libs/CLDRPluralRuleParser/src/CLDRPluralRuleParser.js"></script>
-			<!-- Source -->
-			<script src="assets/src/jquery.i18n.js"></script>
-			<script src="assets/src/jquery.i18n.messagestore.js"></script>
-			<script src="assets/src/jquery.i18n.fallbacks.js"></script>
-			<script src="assets/src/jquery.i18n.parser.js"></script>
-			<script src="assets/src/jquery.i18n.emitter.js"></script>
-			<script src="assets/src/jquery.i18n.language.js"></script>
-			<!-- <script src="assets/src/languages/he.js"></script>
-			<script src="assets/src/languages/fi.js"></script>
-			<script src="assets/src/languages/ml.js"></script> -->
-			<script>
-				function ReadMore() {
-					var dots = document.getElementById("dots");
-					var moreText = document.getElementById("more");
-					var btnText = document.getElementById("readMore");
-				  
-					if (dots.style.display === "none") {
-					  dots.style.display = "inline";
-					  btnText.innerHTML = "Ver Mas...";
-					  moreText.style.display = "none";
-					} else {
-					  dots.style.display = "none";
-					  btnText.innerHTML = "Ver Menos...";
-					  moreText.style.display = "inline";
-					}
-				  }
-			</script>
-	</body>
+        // --- Script para el año actual en el footer ---
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        // --- Script para calcular años de experiencia ---
+        const startYear = 2017; // Año en que comenzaste tu experiencia
+        const currentYear = new Date().getFullYear();
+        const yearsOfExperience = currentYear - startYear;
+        document.getElementById('years').textContent = yearsOfExperience;
+    </script>
+
+</body>
 </html>
