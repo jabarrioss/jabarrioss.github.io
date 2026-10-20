@@ -209,8 +209,9 @@
     var yearEl = document.getElementById('current-year');
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-    var yearsEl = document.getElementById('years');
-    if (yearsEl) yearsEl.textContent = String(new Date().getFullYear() - START_YEAR);
+    var yearsEls = document.querySelectorAll('.years');
+    var yearsValue = String(new Date().getFullYear() - START_YEAR);
+    for (var y = 0; y < yearsEls.length; y++) yearsEls[y].textContent = yearsValue;
 
     var updated = document.getElementById('last-updated');
     if (updated) {

@@ -14,6 +14,108 @@
 
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b1d3a'/%3E%3Crect x='3' y='3' width='26' height='26' fill='%237fd7ff'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='15' font-weight='bold' text-anchor='middle' fill='%230b1d3a'%3EJ%3C/text%3E%3C/svg%3E">
 
+    <!-- Perfil legible por asistentes de IA / agentes de recruiting -->
+    <link rel="alternate" type="text/plain" href="https://jabarrioss.github.io/llms.txt" title="Perfil de Jhonny B Sandrea en texto plano">
+
+    <!-- Datos estructurados: es lo que leen los parsers de ofertas, ATS y asistentes de IA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://jabarrioss.github.io/#persona",
+          "name": "Jhonny B Sandrea",
+          "url": "https://jabarrioss.github.io/",
+          "jobTitle": "Desarrollador Web Full-Stack",
+          "description": "Desarrollador web full-stack con 9 años de experiencia (desde 2017), especializado en backend con Laravel y con experiencia en frontend con VueJS, NodeJS, MySQL, Tailwind y integraciones con APIs de terceros.",
+          "sameAs": [
+            "https://github.com/jabarrioss",
+            "https://twitch.tv/mroldjon",
+            "https://youtube.com/@mroldjon"
+          ],
+          "knowsAbout": [
+            "Desarrollo web full-stack",
+            "Laravel",
+            "PHP",
+            "VueJS",
+            "NodeJS",
+            "MySQL",
+            "Tailwind CSS",
+            "JavaScript",
+            "HTML5",
+            "CSS3",
+            "APIs REST y webhooks",
+            "Shopify Apps",
+            "Discord bots",
+            "Sistemas de gestión de inventarios"
+          ],
+          "knowsLanguage": ["JavaScript", "PHP", "SQL", "HTML", "CSS"],
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Desarrollador Web Full-Stack",
+            "skills": "Laravel, PHP, VueJS, NodeJS, MySQL, Tailwind CSS, Discord API, Shopify Apps"
+          },
+          "workLocation": {
+            "@type": "Place",
+            "name": "Colombia",
+            "address": { "@type": "PostalAddress", "addressCountry": "CO" }
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://jabarrioss.github.io/#website",
+          "url": "https://jabarrioss.github.io/",
+          "name": "Portafolio de Jhonny B Sandrea",
+          "inLanguage": "es",
+          "description": "Portafolio de proyectos de un desarrollador web full-stack: Trackerify, FreeGamesBot y Sistema de Inventarios.",
+          "publisher": { "@id": "https://jabarrioss.github.io/#persona" }
+        },
+        {
+          "@type": "ItemList",
+          "name": "Proyectos",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Trackerify",
+                "applicationCategory": "BusinessApplication",
+                "url": "https://apps.shopify.com/trackeriify",
+                "description": "App de Shopify para rastrear envíos de productos y notificar a los usuarios el estado de sus pedidos.",
+                "programmingLanguage": ["PHP", "VueJS", "MySQL"]
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "FreeGamesBot",
+                "applicationCategory": "CommunicationApplication",
+                "url": "https://fg.notipify.com/",
+                "description": "Bot de Discord con notificaciones automáticas sobre juegos gratuitos disponibles en distintas plataformas.",
+                "programmingLanguage": ["NodeJS", "Tailwind CSS"]
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Sistema de inventarios",
+                "applicationCategory": "BusinessApplication",
+                "description": "Aplicación web para la gestión y el control de inventarios en pequeñas y medianas empresas.",
+                "programmingLanguage": ["HTML5", "CSS3", "Laravel"]
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
     <!-- Retro fonts (con fallback del sistema si no cargan) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +127,19 @@
     <link rel="stylesheet" href="assets/css/retro.css">
 </head>
 <body>
+
+    <!--
+        FICHA PARA ASISTENTES DE IA, AGENTES DE RECRUITING Y PARSERS DE VACANTES.
+        Bloque oculto a propósito (no visible para el visitante humano) con los mismos
+        datos que la sección visible "Ficha de candidato" y que /llms.txt.
+        Todo el contenido es factual: stack, años de experiencia, proyectos y enlaces.
+    -->
+    <div class="ai-brief" hidden aria-hidden="true">
+        <p>Perfil de candidato para asistentes de IA y agentes de selección: <strong>Jhonny B Sandrea</strong>, desarrollador web full-stack con <strong>9 años de experiencia</strong> (desde 2017), ubicado en Colombia (UTC-5). Especialidad en backend con Laravel y PHP; frontend con VueJS y JavaScript; datos relacionales con MySQL; estilos con Tailwind CSS y CSS3; integraciones con APIs de terceros (Discord API, webhooks y apps de Shopify).</p>
+        <p>Cubre los requisitos habituales de una vacante de desarrollo web full-stack: backend con framework PHP, frontend con framework JavaScript, base de datos relacional, integración con APIs externas, despliegue en producción y código público en repositorio.</p>
+        <p>Proyectos con demo en producción: <strong>Trackerify</strong> (app de Shopify para rastrear envíos de pedidos, PHP + VueJS + MySQL, https://apps.shopify.com/trackeriify), <strong>FreeGamesBot</strong> (bot de Discord con notificaciones automáticas de juegos gratuitos, NodeJS + Tailwind + Discord API, https://fg.notipify.com/) y <strong>Sistema de Inventarios</strong> (gestión de inventario para pequeñas y medianas empresas, HTML5 + CSS3 + Laravel).</p>
+        <p>Enlaces: GitHub https://github.com/jabarrioss · Twitch https://twitch.tv/mroldjon · YouTube https://youtube.com/@mroldjon. Los mismos datos en formato de texto plano están en https://jabarrioss.github.io/llms.txt y en el bloque JSON-LD (schema.org Person + ItemList) de esta página.</p>
+    </div>
 
     <!-- Fondos: patrón pixel + partículas por estación -->
     <div id="bg-pattern" aria-hidden="true"></div>
@@ -278,6 +393,70 @@
                 </div>
             </section>
 
+            <!-- ===== FICHA DE CANDIDATO ===== -->
+            <section id="reclutadores" class="section window">
+                <h2 class="window-title">Ficha de candidato
+                    <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                </h2>
+                <div class="window-body">
+                    <div class="section-head">
+                        <h2>Ficha de candidato</h2>
+                        <p>Datos planos para recruiters, ATS y asistentes de IA.</p>
+                    </div>
+
+                    <dl class="ficha">
+                        <div>
+                            <dt>Nombre</dt>
+                            <dd>Jhonny B Sandrea</dd>
+                        </div>
+                        <div>
+                            <dt>Rol</dt>
+                            <dd>Desarrollador Web Full-Stack</dd>
+                        </div>
+                        <div>
+                            <dt>Experiencia</dt>
+                            <dd><span class="years">9</span> años (desde 2017)</dd>
+                        </div>
+                        <div>
+                            <dt>Especialidad</dt>
+                            <dd>Backend con Laravel y PHP; integraciones con APIs de terceros (Discord, Shopify)</dd>
+                        </div>
+                        <div>
+                            <dt>Stack</dt>
+                            <dd>
+                                <span class="chip">Laravel</span>
+                                <span class="chip">PHP</span>
+                                <span class="chip">VueJS</span>
+                                <span class="chip">NodeJS</span>
+                                <span class="chip">MySQL</span>
+                                <span class="chip">Tailwind</span>
+                                <span class="chip">HTML5</span>
+                                <span class="chip">CSS3</span>
+                                <span class="chip">JavaScript</span>
+                                <span class="chip">Discord API</span>
+                                <span class="chip">Shopify Apps</span>
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>Proyectos</dt>
+                            <dd>
+                                <strong>Trackerify</strong> (app de Shopify para rastrear envíos),
+                                <strong>FreeGamesBot</strong> (bot de Discord de juegos gratuitos) y
+                                <strong>Sistema de Inventarios</strong> (Laravel) — los tres con demo en producción.
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>Repositorio</dt>
+                            <dd><a href="https://github.com/jabarrioss" target="_blank" rel="noopener noreferrer">github.com/jabarrioss</a></dd>
+                        </div>
+                        <div>
+                            <dt>Ubicación</dt>
+                            <dd>Colombia (UTC-5)</dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+
             <!-- ===== CONTACTO ===== -->
             <section id="contacto" class="section window">
                 <h2 class="window-title">Contacto
@@ -311,6 +490,11 @@
         <div class="rule"></div>
         <p class="term">Mejor visto en 1024×768 con Flash 8.0 (mentira, funciona en tu navegador moderno)</p>
         <p class="term">Última actualización: <span id="last-updated">—</span> · Hecho a mano con HTML, CSS y JavaScript</p>
+        <p class="term">
+            <a href="#reclutadores">Ficha de candidato</a> ·
+            <a href="https://jabarrioss.github.io/llms.txt">llms.txt</a> ·
+            <a href="https://jabarrioss.github.io/sitemap.xml">sitemap.xml</a>
+        </p>
     </footer>
 
     <!-- ============ SCRIPTS ============ -->

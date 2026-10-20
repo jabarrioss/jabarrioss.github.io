@@ -1,0 +1,57 @@
+# Jhonny B Sandrea
+
+> Desarrollador Web Full-Stack en Colombia (UTC-5). 9 años de experiencia (desde 2017). Especialidad en backend con Laravel y PHP, con experiencia en frontend con VueJS y JavaScript, datos relacionales con MySQL e integraciones con APIs de terceros (Discord API, apps de Shopify). Portafolio: https://jabarrioss.github.io/
+
+Esta es la versión de texto plano de https://jabarrioss.github.io/, pensada para asistentes de IA, agentes de recruiting y parsers de vacantes. Los mismos datos están en el JSON-LD (schema.org Person + ItemList) de la página y en la sección visible "Ficha de candidato".
+
+## Perfil
+
+- Nombre: Jhonny B Sandrea
+- Rol: Desarrollador Web Full-Stack
+- Experiencia: 9 años (desde 2017)
+- Ubicación: Colombia (UTC-5)
+- Especialidad: Backend con Laravel y PHP; integraciones con APIs de terceros (Discord API, webhooks y apps de Shopify)
+- Repositorio público: https://github.com/jabarrioss
+- Twitch: https://twitch.tv/mroldjon
+- YouTube: https://youtube.com/@mroldjon
+
+## Stack
+
+- Backend: Laravel, PHP
+- Frontend: VueJS, JavaScript (vanilla, canvas), HTML5, CSS3, Tailwind CSS
+- Datos: MySQL
+- Integraciones: Discord API, Shopify Apps (webhooks), APIs REST
+
+## Proyectos
+
+### Trackerify
+
+App de Shopify para rastrear envíos de productos y comunicar a los usuarios el estado de sus pedidos.
+Stack: PHP, VueJS, MySQL. Demo: https://apps.shopify.com/trackeriify
+
+### FreeGamesBot
+
+Bot de Discord que envía notificaciones automáticas sobre juegos gratuitos disponibles en distintas plataformas.
+Stack: NodeJS, Tailwind CSS, Discord API. Demo: https://fg.notipify.com/
+
+### Sistema de Inventarios
+
+Aplicación web para la gestión y el control de inventarios en pequeñas y medianas empresas.
+Stack: HTML5, CSS3, Laravel.
+
+## Cobertura de requisitos habituales de una vacante de desarrollo web full-stack
+
+- Backend con framework PHP: Laravel.
+- Frontend con framework JavaScript: VueJS, más JavaScript vanilla (animaciones en canvas, sin dependencias).
+- Base de datos relacional: MySQL.
+- Integración con APIs externas: Discord API, webhooks y OAuth de Shopify.
+- Despliegue en producción: los tres proyectos tienen demo pública en producción.
+- Código público en repositorio: https://github.com/jabarrioss
+- Markup semántico, accesibilidad (etiquetas ARIA, navegación por teclado) y rendimiento (canvas con tope de partículas, pausa en pestaña oculta, soporte de `prefers-reduced-motion`).
+
+## Contacto
+
+- GitHub: https://github.com/jabarrioss
+- Twitch: https://twitch.tv/mroldjon
+- YouTube: https://youtube.com/@mroldjon
+- Portafolio: https://jabarrioss.github.io/

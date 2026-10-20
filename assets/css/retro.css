@@ -727,8 +727,36 @@ a:hover { color: var(--accent-2); }
   color: var(--accent);
 }
 
-/* ---------- 13. Contacto ---------- */
-.social-row {
+/* ---------- 12b. Ficha de candidato (recruiters / IA) ---------- */
+.ai-brief { display: none !important; }
+
+.ficha {
+  display: grid;
+  gap: 7px;
+}
+
+.ficha > div {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 10px;
+  padding: 7px 9px;
+  background: var(--chip-bg);
+  border: 1px solid var(--edge-dark);
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.ficha dt {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  line-height: 1.8;
+  color: var(--accent);
+}
+
+.ficha dd { font-size: 13px; }
+
+.ficha dd .chip { margin: 0 4px 4px 0; }
+
+/* ---------- 13. Contacto ---------- */.social-row {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -776,7 +804,7 @@ a:hover { color: var(--accent-2); }
 }
 
 /* ---------- 15. Responsive ---------- */
-@media (max-width: 860px) {
+@media (max-width: 1000px) {
   .layout { grid-template-columns: minmax(0, 1fr); }
   .sidebar { order: 2; }
   .content { order: 1; }
@@ -796,6 +824,7 @@ a:hover { color: var(--accent-2); }
   .avatar-frame img { width: 136px; height: 136px; }
   .project-grid { grid-template-columns: minmax(0, 1fr); }
   .counter .digit { min-width: 13px; font-size: 23px; }
+  .ficha > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
 }
 
 /* ---------- 16. Reduced motion ---------- */
