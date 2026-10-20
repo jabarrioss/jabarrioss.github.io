@@ -1,305 +1,320 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jhonny B Sandrea | Portafolio de Proyectos</title>
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts (Inter) -->
+    <meta name="description" content="Portafolio de Jhonny B Sandrea, desarrollador web full-stack. Proyectos, skills y contacto en una web con estética retro y partículas por estación.">
+    <meta name="theme-color" content="#0b1d3a">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jhonny B Sandrea | Portafolio de Proyectos">
+    <meta property="og:description" content="Desarrollador Web Full-Stack. Trackerify, FreeGamesBot y Sistema de Inventarios.">
+    <meta property="og:image" content="images/profile/profile.jpg">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b1d3a'/%3E%3Crect x='3' y='3' width='26' height='26' fill='%237fd7ff'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='15' font-weight='bold' text-anchor='middle' fill='%230b1d3a'%3EJ%3C/text%3E%3C/svg%3E">
+
+    <!-- Retro fonts (con fallback del sistema si no cargan) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Aplicamos la fuente Inter a todo el cuerpo */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
-</head>
-<body class="bg-gray-50 text-gray-800">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 
-    <!-- ========== HEADER / NAVBAR ========== -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo / Nombre -->
-                <div class="flex-shrink-0">
-                    <a href="#inicio" class="text-2xl font-bold text-indigo-600 hover:text-indigo-800 transition duration-300">
-                        Jhonny B Sandrea
-                    </a>
-                </div>
-                
-                <!-- Navegación Desktop -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#inicio" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Inicio</a>
-                        <a href="#proyectos" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Proyectos</a>
-                        <a href="#sobre-mi" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Sobre Mí</a>
-                        <a href="#contacto" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Contacto</a>
-                    </div>
-                </div>
-                
-                <!-- Botón Menú Móvil -->
-                <div class="-mr-2 flex md:hidden">
-                    <button id="menu-btn" type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Abrir menú principal</span>
-                        <!-- Icono Hamburguesa -->
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <!-- Icono X (cerrar) -->
-                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
+    <!-- Iconos: FontAwesome local -->
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <!-- Estilos retro -->
+    <link rel="stylesheet" href="assets/css/retro.css">
+</head>
+<body>
+
+    <!-- Fondos: patrón pixel + partículas por estación -->
+    <div id="bg-pattern" aria-hidden="true"></div>
+    <canvas id="bg-particles" aria-hidden="true"></canvas>
+
+    <noscript>
+        <p class="hint" style="text-align:center;padding:8px">Activa JavaScript para ver las partículas de fondo y el contador de visitas.</p>
+    </noscript>
+
+    <!-- ============ BARRA SUPERIOR ============ -->
+    <header class="topbar">
+        <a class="brand" href="#inicio">
+            <span class="logo">JBS</span>
+            <span class="sub">Jhonny B Sandrea</span>
+        </a>
+
+        <nav class="mainnav" aria-label="Navegación principal">
+            <a href="#inicio">Inicio</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#sobre-mi">Sobre Mi</a>
+            <a href="#contacto">Contacto</a>
         </nav>
 
-        <!-- Menú Móvil (oculto por defecto) -->
-        <div class="hidden md:hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#inicio" class="text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Inicio</a>
-                <a href="#proyectos" class="text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Proyectos</a>
-                <a href="#sobre-mi" class="text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Sobre Mí</a>
-                <a href="#contacto" class="text-gray-600 hover:bg-indigo-50 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Contacto</a>
-            </div>
+        <div class="season-picker">
+            <label for="season-select">Estación:</label>
+            <select id="season-select" title="Elige la estación del fondo">
+                <option value="auto">Automática</option>
+                <option value="winter">Invierno</option>
+                <option value="spring">Primavera</option>
+                <option value="summer">Verano</option>
+                <option value="autumn">Otoño</option>
+            </select>
+        </div>
+
+        <button id="menu-btn" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú principal">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <div id="mobile-menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#sobre-mi">Sobre Mi</a>
+            <a href="#contacto">Contacto</a>
         </div>
     </header>
 
-    <!-- ========== MAIN CONTENT ========== -->
-    <main>
-        
-        <!-- ========== SECCIÓN HERO (INICIO) ========== -->
-        <section id="inicio" class="pt-20 pb-28 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <img class="w-40 h-40 rounded-full mx-auto mb-6 shadow-lg" 
-                     src="https://jabarrioss.github.io/images/profile/profile.jpg" 
-                     alt="Foto de perfil de Jhonny B Sandrea"
-                     onerror="this.onerror=null;this.src='https://placehold.co/200x200/e0e7ff/4f46e5?text=Jhonny+B+Sandrea';">
-                
-                <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl">
-                    Hola, soy Jhonny B Sandrea
-                </h1>
-                <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
-                    Soy un Desarrollador Web Full-Stack apasionado por crear soluciones tecnológicas innovadoras y eficientes.
-                </p>
-                <div class="mt-8 flex flex-wrap justify-center gap-4">
-                    <a href="#proyectos" class="inline-block px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
-                        Ver mis Proyectos
-                    </a>
-                    <a href="#contacto" class="inline-block px-8 py-3 bg-gray-200 text-gray-800 font-medium rounded-lg shadow-md hover:bg-gray-300 transition duration-300">
-                        Contáctame
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== SECCIÓN PROYECTOS ========== -->
-        <section id="proyectos" class="py-20 bg-gray-50">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
-                        Mis Proyectos
-                    </h2>
-                    <p class="mt-3 text-lg text-gray-600">
-                        Una selección de mis trabajos más recientes.
-                    </p>
-                </div>
-                
-                <!-- Grid de Proyectos -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Proyecto 1 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-500">
-                        <img class="w-full h-48 object-cover" 
-                             src="https://jabarrioss.github.io/images/fulls/image1.png" 
-                             alt="Vista previa del Proyecto Uno"
-                             onerror="this.onerror=null;this.src='https://placehold.co/200x200/e0e7ff/4f46e5?text=Trackeriify';">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Trackeriify</h3>
-                            <p class="text-gray-600 mb-4">
-                                Shopify App para rastrear envíos de productos, proporcionando a los usuarios actualizaciones sobre el estado de sus pedidos.
-                            </p>
-                            <!-- Etiquetas/Tecnologías -->
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">PHP</span>
-                                <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">VueJS</span>
-                                <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">MySQL</span>
-                            </div>
-                            <!-- Enlaces -->
-                            <div class="flex space-x-4">
-                                <a href="https://apps.shopify.com/trackeriify" class="text-indigo-600 hover:text-indigo-800 font-medium transition duration-300" target="_blank" rel="noopener noreferrer">Ver Demo</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Proyecto 2 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-500">
-                        <img class="w-full h-48 object-cover" 
-                             src="https://jabarrioss.github.io/images/fulls/image2.png" 
-                             alt="Vista previa del Proyecto Dos"
-                             onerror="this.onerror=null;this.src='https://placehold.co/200x200/e0e7ff/4f46e5?text=FreeGamesBot';">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">FreeGamesBot</h3>
-                            <p class="text-gray-600 mb-4">
-                                Bot de Discord que permite a los recibir notificaciones automáticas sobre juegos gratuitos disponibles en diversas plataformas.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">NodeJS</span>
-                                <span class="px-3 py-1 bg-red-100 text-red-800 text-xs font-medium rounded-full">Tailwind</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full">Discord API</span>
-                            </div>
-                            <div class="flex space-x-4">
-                                <a href="https://fg.notipify.com/" class="text-indigo-600 hover:text-indigo-800 font-medium transition duration-300" target="_blank" rel="noopener noreferrer">Ver Demo</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Proyecto 3 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-500">
-                        <img class="w-full h-48 object-cover" 
-                             src="https://jabarrioss.github.io/images/fulls/03.png" 
-                             alt="Vista previa del Proyecto Tres"
-                             onerror="this.onerror=null;this.src='https://placehold.co/200x200/e0e7ff/4f46e5?text=Sistema+de+Inventarios';">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Sistema de inventarios</h3>
-                            <p class="text-gray-600 mb-4">
-                                Aplicación web para la gestión y control de inventarios en pequeñas y medianas empresas.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-full">HTML5</span>
-                                <span class="px-3 py-1 bg-pink-100 text-pink-800 text-xs font-medium rounded-full">CSS3</span>
-                                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">Laravel</span>
-                            </div>
-                            <div class="flex space-x-4">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium transition duration-300" target="_blank" rel="noopener noreferrer">Ver Demo</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-        
-        <!-- ========== SECCIÓN SOBRE MÍ ========== -->
-        <section id="sobre-mi" class="py-20 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
-                        Sobre Mí
-                    </h2>
-                </div>
-                <div class="text-lg text-gray-600 space-y-6 text-left md:text-justify">
-                    <p>
-                        ¡Hola! Soy Jhonny B Sandrea, un desarrollador de software con <span id="years"></span> años de experiencia. Me especializo en Desarrollo backend con Laravel, pero siempre estoy aprendiendo y explorando nuevas tecnologías.
-                    </p>
-                    <p>
-                        Mi objetivo es construir productos que no solo sean funcionales y escalables, sino que también ofrezcan una experiencia de usuario excepcional. Me encanta resolver problemas complejos y colaborar en equipo para llevar ideas desde la concepción hasta el despliegue.
-                    </p>
-                    <p>
-                        Cuando no estoy programando, disfruto viendo películas, aprendiendo nuevas habilidades y explorando el mundo de la tecnología.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== SECCIÓN CONTACTO ========== -->
-        <section id="contacto" class="py-20 bg-gray-50">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
-                    Sigueme!
-                </h2>
-                <!-- <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
-                    Estoy buscando activamente nuevas oportunidades. Si tienes un proyecto en mente o simplemente quieres conectar, ¡no dudes en contactarme!
-                </p> -->
-                
-                <div class="mt-8 flex justify-center items-center space-x-6">
-                    <!-- Email -->
-                    <!-- <a href="mailto:tu.email@ejemplo.com" class="text-gray-500 hover:text-indigo-600 transition duration-300">
-                        <span class="sr-only">Email</span>
-                        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                    </a> -->
-                    
-                    <!-- LinkedIn -->
-                    <!-- <a href="https://linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-indigo-600 transition duration-300">
-                        <span class="sr-only">LinkedIn</span>
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/>
-                        </svg>
-                    </a> -->
-                    
-                    <!-- GitHub -->
-                    <a href="https://github.com/jabarrioss" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-indigo-600 transition duration-300">
-                        <span class="sr-only">GitHub</span>
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .267.18.577.688.48C19.135 20.165 22 16.418 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/>
-                        </svg>
-                    </a>
-                    <!-- Twitch -->
-                    <a href="https://twitch.tv/mroldjon" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-indigo-600 transition duration-300">
-                        <span class="sr-only">Twitch</span>
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M2.25 0C1.007 0 0 1.007 0 2.25v15.75c0 1.243 1.007 2.25 2.25 2.25h4.5v4.5l4.5-4.5h6.75c1.243 0 2.25-1.007 2.25-2.25V2.25C22.5 1.007 21.493 0 20.25 0H2.25zm16.5 15.75h-7.5l-4.5 4.5v-4.5H3V3h15.75v12.75zM9.75 6.75h-3v6h3v-6zm7.5 0h-3v6h3v-6z"/>
-                        </svg>
-                    </a>
-                    <!-- Youtube -->
-                    <a href="https://youtube.com/@mroldjon" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-indigo-600 transition duration-300">
-                        <span class="sr-only">YouTube</span>
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M23.498 6.186a2.997 2.997 0 00-2.11-2.12C19.796 3.5 12 3.5 12 3.5s-7.796 0-9.388.566a2.997 2.997 0 00-2.11 2.12A31.24 31.24 0 000 12a31.24 31.24 0 00.502 5.814 2.997 2.997 0 002.11 2.12C4.204 20.5 12 20.5 12 20.5s7.796 0 9.388-.566a2.997 2.997 0 002.11-2.12A31.24 31.24 0 0024 12a31.24 31.24 0 00-.502-5.814zM9.75 15.02V8.98l6.5 3.02-6.5 3.02z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-        
-    </main>
-    
-    <!-- ========== FOOTER ========== -->
-    <footer class="bg-white border-t border-gray-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
-            <p class="text-sm text-gray-500">
-                &copy; <span id="current-year"></span> Jhonny B Sandrea. Todos los derechos reservados.
-            </p>
+    <!-- ============ TICKER ============ -->
+    <div id="ticker" aria-hidden="true">
+        <div class="track" id="ticker-track">
+            <span>★ Bienvenido al portafolio de Jhonny B Sandrea ★ Desarrollador Web Full-Stack ★ Trackerify · FreeGamesBot · Sistema de Inventarios ★ github.com/jabarrioss ★ twitch.tv/mroldjon ★ youtube.com/@mroldjon ★</span>
+            <span>★ Bienvenido al portafolio de Jhonny B Sandrea ★ Desarrollador Web Full-Stack ★ Trackerify · FreeGamesBot · Sistema de Inventarios ★ github.com/jabarrioss ★ twitch.tv/mroldjon ★ youtube.com/@mroldjon ★</span>
         </div>
+    </div>
+
+    <!-- ============ CONTENIDO ============ -->
+    <main class="layout">
+
+        <!-- ---------- SIDEBAR ---------- -->
+        <aside class="sidebar" aria-label="Barra lateral">
+
+            <section class="window">
+                <h2 class="window-title">Contador de visitas
+                    <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                </h2>
+                <div class="widget-body">
+                    <div class="counter" id="visit-counter" aria-label="Contador de visitas"></div>
+                    <p class="hint">Eres el visitante número <span id="visit-count-label">—</span> de esta máquina. ¡Gracias por mirar!</p>
+                </div>
+            </section>
+
+            <section class="window">
+                <h2 class="window-title">Estación actual
+                    <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                </h2>
+                <div class="widget-body">
+                    <div class="season-badge">
+                        <span class="ico" id="season-icon" aria-hidden="true">✦</span>
+                        <span>
+                            <span class="name" id="season-name">—</span><br>
+                            <span class="mode" id="season-mode">—</span>
+                        </span>
+                    </div>
+                    <p class="hint" style="margin-top:8px">El fondo cambia con las estaciones del año. Usa el selector de arriba para verlas todas.</p>
+                </div>
+            </section>
+
+            <section class="window">
+                <h2 class="window-title">Actualidades
+                    <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                </h2>
+                <div class="widget-body">
+                    <ul class="news">
+                        <li><span class="tag blink">NUEVO</span> Portafolio rediseñado con estética retro y partículas por estación.</li>
+                        <li><span class="tag">2003</span> Contador de visitas, ticker y marcos de ventana: el nostalgia está de vuelta.</li>
+                        <li><span class="tag">3 PROY</span> Trackerify, FreeGamesBot y Sistema de Inventarios.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="window">
+                <h2 class="window-title">Mis sitios
+                    <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                </h2>
+                <div class="widget-body">
+                    <div class="badges">
+                        <a href="https://github.com/jabarrioss" target="_blank" rel="noopener noreferrer" title="GitHub">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31'%3E%3Crect width='88' height='31' fill='%231d2a3a'/%3E%3Crect x='1.5' y='1.5' width='85' height='28' fill='none' stroke='%23a9c6e2'/%3E%3Ctext x='44' y='14' font-family='monospace' font-size='9' fill='%23ffffff' text-anchor='middle'%3EGITHUB%3C/text%3E%3Ctext x='44' y='25' font-family='monospace' font-size='8' fill='%23a9c6e2' text-anchor='middle'%3Ecode%20and%20commits%3C/text%3E%3C/svg%3E"
+                                 alt="GitHub de Jhonny B Sandrea" width="88" height="31">
+                        </a>
+                        <a href="https://twitch.tv/mroldjon" target="_blank" rel="noopener noreferrer" title="Twitch">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31'%3E%3Crect width='88' height='31' fill='%234a2263'/%3E%3Crect x='1.5' y='1.5' width='85' height='28' fill='none' stroke='%23d8bdf2'/%3E%3Ctext x='44' y='14' font-family='monospace' font-size='9' fill='%23ffffff' text-anchor='middle'%3ETWITCH%3C/text%3E%3Ctext x='44' y='25' font-family='monospace' font-size='8' fill='%23d8bdf2' text-anchor='middle'%3Elive%20streams%3C/text%3E%3C/svg%3E"
+                                 alt="Twitch de Jhonny B Sandrea" width="88" height="31">
+                        </a>
+                        <a href="https://youtube.com/@mroldjon" target="_blank" rel="noopener noreferrer" title="YouTube">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31'%3E%3Crect width='88' height='31' fill='%236b1f1f'/%3E%3Crect x='1.5' y='1.5' width='85' height='28' fill='none' stroke='%23f2b0b0'/%3E%3Ctext x='44' y='14' font-family='monospace' font-size='9' fill='%23ffffff' text-anchor='middle'%3EYOUTUBE%3C/text%3E%3Ctext x='44' y='25' font-family='monospace' font-size='8' fill='%23f2b0b0' text-anchor='middle'%3Evideos%20y%20vlogs%3C/text%3E%3C/svg%3E"
+                                 alt="YouTube de Jhonny B Sandrea" width="88" height="31">
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </aside>
+
+        <!-- ---------- CONTENIDO PRINCIPAL ---------- -->
+        <div class="content">
+
+            <!-- ===== INICIO ===== -->
+            <section id="inicio" class="section window">
+                <h2 class="window-title">Bienvenido
+                    <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                </h2>
+                <div class="window-body hero">
+                    <div class="avatar-frame">
+                        <img src="images/profile/profile.jpg" width="1427" height="1600" decoding="async"
+                             alt="Foto de perfil de Jhonny B Sandrea">
+                    </div>
+
+                    <h1>Hola, soy Jhonny B Sandrea</h1>
+
+                    <p class="typed" id="typed-text" aria-label="Soy un Desarrollador Web Full-Stack apasionado por crear soluciones tecnológicas innovadoras y eficientes."
+                       data-text="Soy un Desarrollador Web Full-Stack apasionado por crear soluciones tecnológicas innovadoras y eficientes.">Soy un Desarrollador Web Full-Stack apasionado por crear soluciones tecnológicas innovadoras y eficientes.</p>
+
+                    <div class="actions">
+                        <a class="btn" href="#proyectos">Ver mis Proyectos</a>
+                        <a class="btn btn-alt" href="#contacto">Contáctame</a>
+                    </div>
+
+                    <div class="badge-strip">
+                        <span class="chip">Laravel</span>
+                        <span class="chip">PHP</span>
+                        <span class="chip">VueJS</span>
+                        <span class="chip">NodeJS</span>
+                        <span class="chip">MySQL</span>
+                        <span class="chip">Discord API</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== PROYECTOS ===== -->
+            <section id="proyectos" class="section window">
+                <h2 class="window-title">Proyectos
+                    <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                </h2>
+                <div class="window-body">
+                    <div class="section-head">
+                        <h2>Mis Proyectos</h2>
+                        <p>Una selección de mis trabajos más recientes.</p>
+                    </div>
+
+                    <div class="project-grid">
+
+                        <article class="window project">
+                            <div class="window-title">Trackeriify</div>
+                            <img class="shot" src="images/fulls/image1.png" width="1600" height="900" loading="lazy" decoding="async"
+                                 alt="Captura de la app Trackerify">
+                            <div class="body">
+                                <h3>Trackeriify</h3>
+                                <p class="desc">Shopify App para rastrear envíos de productos, proporcionando a los usuarios actualizaciones sobre el estado de sus pedidos.</p>
+                                <div class="tags">
+                                    <span class="chip">PHP</span>
+                                    <span class="chip">VueJS</span>
+                                    <span class="chip">MySQL</span>
+                                </div>
+                                <div>
+                                    <a class="btn btn-small" href="https://apps.shopify.com/trackeriify" target="_blank" rel="noopener noreferrer">Ver Demo</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="window project">
+                            <div class="window-title">FreeGamesBot</div>
+                            <img class="shot" src="images/fulls/image2.png" width="1920" height="1080" loading="lazy" decoding="async"
+                                 alt="Captura del bot de Discord FreeGamesBot">
+                            <div class="body">
+                                <h3>FreeGamesBot</h3>
+                                <p class="desc">Bot de Discord que permite a los recibir notificaciones automáticas sobre juegos gratuitos disponibles en diversas plataformas.</p>
+                                <div class="tags">
+                                    <span class="chip">NodeJS</span>
+                                    <span class="chip">Tailwind</span>
+                                    <span class="chip">Discord API</span>
+                                </div>
+                                <div>
+                                    <a class="btn btn-small" href="https://fg.notipify.com/" target="_blank" rel="noopener noreferrer">Ver Demo</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="window project">
+                            <div class="window-title">Sistema de inventarios</div>
+                            <img class="shot" src="images/fulls/03.png" width="1280" height="1024" loading="lazy" decoding="async"
+                                 alt="Captura del sistema de inventarios">
+                            <div class="body">
+                                <h3>Sistema de inventarios</h3>
+                                <p class="desc">Aplicación web para la gestión y control de inventarios en pequeñas y medianas empresas.</p>
+                                <div class="tags">
+                                    <span class="chip">HTML5</span>
+                                    <span class="chip">CSS3</span>
+                                    <span class="chip">Laravel</span>
+                                </div>
+                                <div>
+                                    <span class="btn btn-small is-disabled" aria-disabled="true" title="Demo no disponible todavía">Ver Demo</span>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== SOBRE MÍ ===== -->
+            <section id="sobre-mi" class="section window">
+                <h2 class="window-title">Curriculum
+                    <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                </h2>
+                <div class="window-body">
+                    <div class="section-head">
+                        <h2>Sobre Mí</h2>
+                        <p>Quién está detrás de este sitio.</p>
+                    </div>
+                    <div class="prose">
+                        <p>
+                            ¡Hola! Soy Jhonny B Sandrea, un desarrollador de software con <span class="years" id="years">—</span> años de experiencia. Me especializo en Desarrollo backend con Laravel, pero siempre estoy aprendiendo y explorando nuevas tecnologías.
+                        </p>
+                        <p>
+                            Mi objetivo es construir productos que no solo sean funcionales y escalables, sino que también ofrezcan una experiencia de usuario excepcional. Me encanta resolver problemas complejos y colaborar en equipo para llevar ideas desde la concepción hasta el despliegue.
+                        </p>
+                        <p>
+                            Cuando no estoy programando, disfruto viendo películas, aprendiendo nuevas habilidades y explorando el mundo de la tecnología.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== CONTACTO ===== -->
+            <section id="contacto" class="section window">
+                <h2 class="window-title">Contacto
+                    <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                </h2>
+                <div class="window-body">
+                    <div class="section-head">
+                        <h2>Sigueme!</h2>
+                        <p>Encuéntrame en mis redes y mándame un mensaje.</p>
+                    </div>
+                    <div class="social-row">
+                        <a class="social" href="https://github.com/jabarrioss" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                        </a>
+                        <a class="social" href="https://twitch.tv/mroldjon" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitch" aria-hidden="true"></i> Twitch
+                        </a>
+                        <a class="social" href="https://youtube.com/@mroldjon" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-youtube" aria-hidden="true"></i> YouTube
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <p class="pixel">&copy; <span id="current-year">2026</span> Jhonny B Sandrea</p>
+        <div class="rule"></div>
+        <p class="term">Mejor visto en 1024×768 con Flash 8.0 (mentira, funciona en tu navegador moderno)</p>
+        <p class="term">Última actualización: <span id="last-updated">—</span> · Hecho a mano con HTML, CSS y JavaScript</p>
     </footer>
 
-    <!-- ========== JAVASCRIPT ========== -->
-    <script>
-        // --- Script para el menú móvil ---
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcons = menuBtn.querySelectorAll('svg');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            menuIcons.forEach(icon => icon.classList.toggle('hidden'));
-        });
-
-        // --- Script para cerrar menú móvil al hacer clic en un enlace ---
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIcons.forEach(icon => icon.classList.toggle('hidden'));
-            });
-        });
-
-        // --- Script para el año actual en el footer ---
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        // --- Script para calcular años de experiencia ---
-        const startYear = 2017; // Año en que comenzaste tu experiencia
-        const currentYear = new Date().getFullYear();
-        const yearsOfExperience = currentYear - startYear;
-        document.getElementById('years').textContent = yearsOfExperience;
-    </script>
-
+    <!-- ============ SCRIPTS ============ -->
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>
