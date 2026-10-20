@@ -599,6 +599,7 @@ a:hover { color: var(--accent-2); }
   height: 168px;
   object-fit: cover;
   border: 2px solid var(--edge-dark);
+  image-rendering: pixelated;
 }
 
 .hero h1 {
