@@ -24,7 +24,7 @@ Esta es la versión de texto plano de https://jabarrioss.github.io/, pensada par
 
 ## Proyectos
 
-### Trackerify
+### Trackeriify
 
 App de Shopify para rastrear envíos de productos y comunicar a los usuarios el estado de sus pedidos.
 Stack: PHP, VueJS, MySQL. Demo: https://apps.shopify.com/trackeriify
